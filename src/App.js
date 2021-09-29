@@ -15,18 +15,22 @@ const App = () => {
     if(opt === 1){
       setSelectedOpt(1)
       setSubopt(0)
+      setSearchRes("")
     }
     else if(opt === 2){
       setSelectedOpt(2)
       setSubopt(0)
+      setSearchRes("")
     }
     else if(opt === 3){
       setSelectedOpt(3)
       setSubopt(0)
+      setSearchRes("")
     }
     else if(opt === 4){
       setSelectedOpt(4)
       setSubopt(0)
+      setSearchRes("")
     }
   }
   const subsetter = (opt) => {
@@ -88,6 +92,14 @@ const App = () => {
       professors.forEach((prof) => {
         if (prof.id === parseInt(id)){
           setSearchRes(`ID: ${id}, Nombre: ${prof.name}, Telefono: ${prof.phone}, Email: ${prof.email}`)
+        }
+      })
+    }
+    else if(selectedOpt === 3){
+      let id = document.getElementById("cour-id").value
+      courses.forEach((cour) => {
+        if (cour.id === parseInt(id)){
+          setSearchRes(`ID: ${id}, Nombre: ${cour.name}, Creditos: ${cour.cred}, Horario: ${cour.hour}, Profesor: ${cour.profId}, Fecha: ${cour.creationDate}`)
         }
       })
     }
